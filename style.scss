@@ -1,0 +1,642 @@
+/* Variables */
+
+$color-one: #1e3799;
+$color-two: #b71540;
+$color-three: #0a3d62;
+$color-light: #fff;
+$font-one: 'Inconsolata', monospace;
+$font-two: 'Signika', sans-serif;
+$transition: all 1s;
+
+
+/* Global */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.7;
+  font-family: $font-one;
+  color: #636e72;
+}
+
+.container {
+  max-width: 1140px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 96px 0;
+}
+
+.section-title {
+  font-family: $font-two;
+  font-size: 48px;
+  margin: 0 0 72px 36px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 36px;
+}
+
+.box-title, .skill-title {
+  font-family: $font-one;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 0 12px 0;
+}
+
+
+/* Navigation */
+
+.navigation {
+  background-color: $color-one;
+  padding: 12px 0;
+
+  a {
+    text-decoration: none;
+    color: $color-light;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    &:hover {
+      color: $color-two;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      display: inline-block;
+      margin-left: 36px;
+      position: relative;
+
+      &:hover ul {
+        display: block;
+        text-align: center;
+      }
+
+      ul {
+        display: none;
+        position: absolute;
+        background-color: $color-light;
+        left: 50%;
+        transform: translateX(-50%);
+        padding-top: 12px;
+      }
+
+      ul li {
+        display: block;
+        margin: 0 auto 12px;
+      }
+
+      ul li a {
+        color: $color-one;
+        display: block;
+        padding: 0 24px;
+
+        &:hover {
+          color: $color-two;
+        }
+      }
+    }
+  }
+}
+
+
+/* Splash */
+
+.splash {
+  background-color: $color-one;
+  min-height: 500px;
+  display: flex;
+}
+
+.splash-inner {
+  margin: auto;
+  max-width: 70%;
+}
+
+.page-title {
+  margin: 0;
+  font-family: $font-one;
+  font-size: 72px;
+  word-spacing: -24px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: $color-light;
+
+  span {
+    font-size: 76px;
+    font-family: $font-two;
+  }
+}
+
+.page-subtitle {
+  margin: 24px 0;
+  font-family: $font-one;
+  font-weight: 400;
+  font-size: 16px;
+  color: $color-light;
+}
+
+.btn {
+  display: inline-block;
+  min-width: 160px;
+  margin: 24px auto 0 auto;
+  padding: 16px;
+  border-radius: 5px;
+  font-family: $font-one;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-width: 2px;
+  border-style: solid;
+  background-position: 100% 0;
+  background-size: 300%;
+  transition: $transition;
+
+  &:hover {
+    background-position: 0 100%;
+    color: $color-one;
+    border: none;
+  }
+}
+
+.btn-one {
+  border-color: $color-light;
+  color: $color-light;
+  background-image: linear-gradient(90deg, #ffffff 50%, transparent 50%);
+}
+
+
+/* About */
+
+.box-1 {
+  flex: 0 0 33.333%;
+  padding: 0 15px;
+  position: relative;
+
+  p:first-of-type {
+    font-weight: bold;
+    margin: 0;
+  }
+
+  p:last-of-type {
+    margin: 0;
+  }
+
+  .btn:hover {
+    background-position: 0 100%;
+    color: $color-light;
+    border: none;
+  }
+}
+
+.number {
+  font-family: $font-two;
+  font-size: 144px;
+  line-height: 1;
+  font-weight: bold;
+  color: rgba(7, 153, 146, 0.3);
+  position: absolute;
+  top: -22px;
+  left: 0;
+  z-index: -1;
+}
+
+.btn-two {
+  border-color: $color-one;
+  color: $color-one;
+  background-image: linear-gradient(90deg, #b71540 50%, transparent 50%);
+}
+
+.btn-three {
+  border-color: $color-two;
+  color: $color-two;
+  background-image: linear-gradient(90deg, #b71540 50%, transparent 50%);
+}
+
+.btn-four {
+  border-color: $color-three;
+  color: $color-three;
+  background-image: linear-gradient(90deg, #b71540 50%, transparent 50%);
+}
+
+
+/* Work */
+
+.box-2 {
+  flex: 0 0 50%;
+  min-height: 300px;
+  margin: 0 0 96px 0;
+  padding: 0px 0;
+  position: relative;
+
+  .btn:hover {
+    background-position: 0 100%;
+    color: #f39c12;
+  }
+}
+
+.skill {
+  position: relative;
+}
+
+.skill-image {
+  position: absolute;
+  max-width: 250px;
+  height: 100%;
+
+  img {
+    width: 95%;
+    height: 90%;
+    object-fit: cover;
+  }
+
+  &:hover::after {
+    left: 0;
+    top: 0;
+  }
+}
+
+.skill-description {
+  padding: 36px 36px 36px 55%;
+  text-align: left;
+
+  p:first-of-type {
+    margin: 0;
+  }
+
+  p:last-of-type {
+    margin: 0;
+    font-weight: bold;
+  }
+}
+
+.skill-image::after {
+  width: 95%;
+  height: 90%;
+  background: #079992;
+  position: absolute;
+  content: '';
+  left: 20px;
+  top: 20px;
+  opacity: 0.3;
+  transition: all 1s;
+}
+
+.btn-five {
+  border: none;
+  margin: 36px 0;
+  padding: 0;
+  text-align: left;
+  color: #1e3799;
+}
+
+
+/* Contact */
+
+.contact {
+  background: $color-one;
+  color: $color-light;
+}
+
+.box-3 {
+  flex: 2 0 0;
+  padding: 0 96px 0 0;
+}
+
+.box-4 {
+  flex: 1 0 0;
+
+  h4 {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+
+  h4:first-of-type {
+    margin-top: 0;
+  }
+}
+
+input, textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: inherit;
+  color: $color-light;
+  border: none;
+  border-bottom: 4px solid $color-light;
+  margin: 10px 0;
+}
+
+input::placeholder, textarea::placeholder {
+  font-family: $font-one;
+  color: $color-light;
+}
+
+
+/* FOOTER */
+
+.page-footer {
+  background-color: $color-light;
+  text-align: center;
+  padding: 48px 0;
+
+  ul {
+    margin: 0;
+
+    li {
+      font-size: 0;
+      display: inline-block;
+
+      i {
+        font-size: 30px;
+        background-color: $color-two;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        color: $color-light;
+        border-radius: 50%;
+        margin-left: 20px;
+        transition: $transition;
+
+        &:hover {
+          transform: scale(1.2, 1.2);
+        }
+      }
+    }
+  }
+}
+
+
+/* Media */
+
+@media (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+
+  .navigation ul li {
+    margin-left: 5px;
+  }
+
+  .navigation a {
+    letter-spacing: 0;
+  }
+
+  .page-title {
+    font-size: 60px;
+  }
+
+  .page-subtitle {
+    font-size: 14px;
+  }
+
+  .page-title span {
+    font-size: 60px;
+    font-family: "Signika", sans-serif;
+  }
+
+  .splash-inner {
+    margin: auto;
+    max-width: 88%;
+  }
+
+  .flex-container {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  section {
+    padding: 15px 0;
+  }
+
+  .section-title {
+    font-size: 28px;
+    margin: 0 0 52px 0;
+  }
+
+  .box-1 {
+    margin-bottom: 60px;
+    padding: 0 15px;
+  }
+
+  .box-title, .skill-title {
+    font-size: 20px;
+  }
+
+  .btn {
+    min-width: 130px;
+    margin: 24px auto 0 auto;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: "Inconsolata", monospace;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-width: 2px;}
+
+  .box-2 .btn {
+    min-width: 130px;
+    margin: 24px auto 0 0;
+    padding: 10px 0;
+    text-align: left;}
+
+  .box-2 {
+    max-width: 100%;
+    min-height: 400px;
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
+
+  .skill {
+    position: relative;
+    min-height: 400px;
+    margin: 0;
+  }
+
+  .skill-image {
+    position: absolute;
+    max-width: 100%;
+    height: 150px;
+  }
+
+  .skill-description {
+    max-width: 100%;
+    height: 150px;
+    transform: translateY(100%);
+    padding: 10px 0 10px 0;
+  }
+
+  .box-3 {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .box-4 {
+    width: 90%;
+    margin: 50px auto 0 auto;
+  }
+
+  .page-footer i {
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 10px;
+  }
+
+  .page-footer ul {
+    padding: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  body {
+    font-size: 14px;
+  }
+
+  .navigation ul li {
+    margin-left: 5px;
+  }
+
+  .navigation a {
+    letter-spacing: 0;
+  }
+
+  .page-title {
+    font-size: 60px;
+  }
+
+  .page-subtitle {
+    font-size: 14px;
+  }
+
+  .page-title span {
+    font-size: 60px;
+    font-family: "Signika", sans-serif;
+  }
+
+  .splash-inner {
+    margin: auto;
+    max-width: 88%;
+  }
+
+  .flex-container {
+    margin: 0;
+    padding: 0 20px;
+  }
+
+  section {
+    padding: 15px 0;
+  }
+
+  .section-title {
+    font-size: 28px;
+    margin: 0 0 52px 0;
+  }
+
+  .box-1 {
+    margin-bottom: 60px;
+    padding: 0 15px;
+  }
+
+  .box-title, .skill-title {
+    font-size: 20px;
+  }
+
+  .btn {
+    min-width: 130px;
+    margin: 24px auto 0 auto;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: "Inconsolata", monospace;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-width: 2px;
+  }
+
+  .box-2 .btn {
+    min-width: 130px;
+    margin: 24px auto 0 0;
+    padding: 10px 0;
+    text-align: left;
+  }
+
+  .work .flex-container {
+    display: flex;
+    margin: 0;
+  }
+
+  .box-2 {
+    flex: 0 0 45%;
+    min-height: 400px;
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
+
+  .skill {
+    position: relative;
+    min-height: 400px;
+    margin: 0;
+  }
+
+  .skill-image {
+    position: absolute;
+    max-width: 100%;
+    height: 150px;
+  }
+
+  .skill-description {
+    max-width: 100%;
+    height: 150px;
+    transform: translateY(100%);
+    padding: 10px 0 10px 0;
+  }
+
+  .box-3 {
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .box-4 {
+    margin-top: 50px;
+  }
+
+  .contact .flex-container {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .page-footer i {
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 10px;
+  }
+
+  .page-footer ul {
+    padding: 0;
+  }
+}
